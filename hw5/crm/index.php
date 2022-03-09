@@ -1,4 +1,6 @@
 <?php include 'includes/book-utilities.inc.php';
+/*This code calls the function readCustomers found in book-utilities.php
+See the function to see what is included in $customers.php */
 $customers = readCustomers('data/customers.txt');
 ?>
 <!DOCTYPE html>
@@ -82,7 +84,9 @@ echo '</tr>';
 /*See the URL that is created above for when the customer name is clicked.
 It contains a query string like customer=ID
 The code below checks if the request method is GET and if so it then
-checks for the customer value set in the query string of the URL */
+checks for the customer value set in the query string of the URL 
+Make sure you have reviewed the readCustomers function found in
+book-utilities.php to what is stored in $customers*/
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   if (isset($_GET['customer'])) {
     $requestedCustomer = $customers[$_GET['customer']];
